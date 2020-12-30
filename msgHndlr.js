@@ -64,7 +64,7 @@ module.exports = msgHandler = async (client, message) => {
         const groupAdmins = isGroupMsg ? await client.getGroupAdmins(groupId) : ''
         const isGroupAdmins = isGroupMsg ? groupAdmins.includes(sender.id) : false
         const isBotGroupAdmins = isGroupMsg ? groupAdmins.includes(botNumber + '@c.us') : false
-        const ownerNumber = ["628xxx@c.us","55xxxxx"] // replace with your whatsapp number
+        const ownerNumber = ["6285540514071@c.us","55xxxxx"] // replace with your whatsapp number
         const isOwner = ownerNumber.includes(sender.id)
         const isBlocked = blockNumber.includes(sender.id)
         const isNsfw = isGroupMsg ? nsfw_.includes(chat.id) : false
@@ -574,13 +574,13 @@ module.exports = msgHandler = async (client, message) => {
             const link = args[1]
             const key = args[2]
             const tGr = await client.getAllGroups()
-            const minMem = 30
+            const minMem = 29
             const isLink = link.match(/(https:\/\/chat.whatsapp.com)/gi)
             if (key !== 'lGjYt4zA5SQlTDx9z9Ca') return client.reply(from, '*key* salah! silahkan chat owner bot unruk mendapatkan key yang valid', id)
             const check = await client.inviteInfo(link)
             if (!isLink) return client.reply(from, 'Ini link? 👊🤬', id)
             if (tGr.length > 15) return client.reply(from, 'Maaf jumlah group sudah maksimal!', id)
-            if (check.size < minMem) return client.reply(from, 'Member group tidak melebihi 30, bot tidak bisa masuk', id)
+            if (check.size < minMem) return client.reply(from, 'Member group tidak melebihi 29, bot tidak bisa masuk', id)
             if (check.status === 200) {
                 await client.joinGroupViaLink(link).then(() => client.reply(from, 'Bot akan segera masuk!'))
             } else {
